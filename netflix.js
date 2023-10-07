@@ -56,14 +56,20 @@ start.addEventListener('click',()=>{
 })
 let img=document.querySelector('#poster_image1');
 let select=document.querySelectorAll('.playlistplays');
-for(ong of select){
-    ong.addEventListener('click',async function(el){
-        console.dir(ong);
-        let t=await el.target.id;
-        // music.src=`audio/${t}.mp3`;
-        // console.dir(ong);
-        console.log(t);
+// for(ong of select){
+//     ong.addEventListener('click',async function(el){
+//         console.dir(ong);
+//         let t=await ong.id;
+//         // music.src=`audio/${t}.mp3`;
+//         // console.dir(ong);
+//         console.log(t);
+//     })
+// }   
+select.forEach((ong)=>{
+    ong.addEventListener('click',()=>{
+        console.log(ong.id);
+        music.src=`audio/${ong.id}.mp3`;
     })
-}   
+})
 
 
